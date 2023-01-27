@@ -1,6 +1,5 @@
-
-<?php require_once('./config.php');?>
-<?php require_once('../controller/header.php')?>
+<?php require_once('./header.php')?>
+<?php require_once('../controller/membreController.php');?>
 
 
 
@@ -26,27 +25,29 @@
             </tr>
 
    <tbody>
+
+   <?php foreach($tableMembre as $values): ?>  
 <tr>
 
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><?=$values['id_membre'] ?></td>
+<td><?=$values['pseudo'] ?></td>
+<td><?=$values['prenom'] ?></td>
+<td><?=$values['nom'] ?></td>
+<td><?=$values['email'] ?></td>
+<td><?=$values['civilite'] ?></td>
+<td><?=$values['statut'] ?></td>
+<td><?=$values['date_enregistrement'] ?></td>
+
 <td>
                        
-                        <a href=""><img class="icone" src="../assets/img/loupe.png" alt=""></a>
-                        <a href=""><img class="icone" src="../assets/img/modifier" alt=""></a>
-                        <a href=""><img class="icone" src="../assets/img/poubelle.png" alt=""></a>
-                </td>
+    <a href=""><img class="icone" src="../assets/img/loupe.png" alt=""></a>
+    <a href="membreUpdate.php?action=update&id=<?= $values['id_membre'] ?>"><img class="icone" src="../assets/img/modifier" alt=""></a>
+    <a href="?action=delete&id=<?= $values['id_membre'] ?>"><img class="icone" src="../assets/img/poubelle.png" alt=""></a>
+    </td>
                     
 </tr>
 
-
+<?php endforeach ?>
 
 
    </tbody>         
@@ -56,10 +57,8 @@
 
 
 
-<form action="">
+<form method="post">
 
-<label for="">id membre</label>
-<input name="id_membre" type="text">
 
 <label for="">pseudo</label>
 <input name="pseudo" type="text">
@@ -78,22 +77,21 @@
 
 <label for="">civilité</label>
 <select name="civilite" id="">
-    <option value="homme">Homme</option>
-    <option value="femme">Femme</option>
+    <option value="m">Homme</option>
+    <option value="f">Femme</option>
 </select>
 
 
 <label for="">statut</label>
 <select name="statut" id="">
-    <option value="admin">Admin</option>
-    <option value="user">User</option>
+    <option value="1">Admin</option>
+    <option value="2">User</option>
 </select>
 
-<label for="">date d'enregistrement</label>
-<input name="date_enregistrement" type="text">
 
 
-<input type="submit">
+
+<input name="validemembre" type="submit">
 
 
 </form>

@@ -1,5 +1,9 @@
+<?php require_once('./header.php')?>
 <?php require_once('../controller/agenceController.php')?>
-<?php require_once('../controller/header.php')?>
+<?php require_once('../controller/inscriptionController.php')?>
+
+
+
 <?php var_dump($modTable) ?>
 
 

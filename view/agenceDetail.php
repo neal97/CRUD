@@ -1,4 +1,7 @@
+<?php require_once('./header.php')?>
+
 <?php require_once('../controller/agenceController.php')?>
+
 
 <!DOCTYPE html>
 <html lang="en">

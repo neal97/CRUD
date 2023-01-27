@@ -189,10 +189,8 @@ if ($action == 'update') {
 
  if(isset($_POST['valider_form']))
 {
-   /* 
-    Quand on clic sur le button valider de notre formulaire, 
-    on appel notre function (add) en lui transmettant les données récupérées de notre formulaire qui ont été stocké dans la super global $_POST.
-  */
+ 
+ 
    $updateTable = $agence->update($_POST);
     
   
